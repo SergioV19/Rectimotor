@@ -3,6 +3,7 @@ package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import views.JFramePrincipal;
 import views.ViewManager;
 
 public class Controller implements ActionListener{
@@ -10,8 +11,7 @@ public class Controller implements ActionListener{
     private ViewManager view;
 
     public Controller(){
-        this.view = new ViewManager();
-        
+        new JFramePrincipal(this);
     }
 
     @Override

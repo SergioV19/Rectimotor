@@ -2,6 +2,7 @@ package views;
 
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.DimensionUIResource;
 
 import controllers.Controller;
 import controllers.Commands;
@@ -9,14 +10,17 @@ import controllers.Commands;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.Dimension;
 
 public class JPanelMenu extends JPanel{
     
     private static final long serialVersionUID = 1L;
 
-    public JPanelMenu(Controller control){
+    public JPanelMenu(Controller control, int width, int height){
         this.setLayout(new GridLayout(1, 3, 15, 15) );
-        this.setBorder(new EmptyBorder(80, 80, 80, 80));
+        setPreferredSize(new Dimension((int) (width*0.8), (int) (height*0.5)));
+        this.setBorder(new EmptyBorder((int) (height*0.05), (int) (width*0.1),
+        (int) (height*0.05), (int) (width*0.1)));
         this.setBackground(Color.WHITE);
         init(control);
         setVisible(true);
@@ -27,14 +31,18 @@ public class JPanelMenu extends JPanel{
         addMotor.setBackground(Color.WHITE);
         addMotor.setActionCommand(Commands.ADD_ORDER.name());
         addMotor.addActionListener(control);
-        JButton deleteMotor = new JButton("Actualizar orden");
-        deleteMotor.setBackground(Color.WHITE);
-        deleteMotor.setActionCommand(Commands.UPDATE_ORDER.name());
-        deleteMotor.addActionListener(control);
-        JButton showMotor = new JButton("Buscar órdenes generadas");
-        showMotor.setBackground(Color.WHITE);
-        showMotor.setActionCommand(Commands.SEARCH_ORDER.name());
-        showMotor.addActionListener(control);
+        setBorder(new EmptyBorder(10, 50, 10, 50));
+        JButton updateMotor = new JButton("Actualizar orden");
+        updateMotor.setBackground(Color.WHITE);
+        updateMotor.setActionCommand(Commands.UPDATE_ORDER.name());
+        updateMotor.addActionListener(control);
+        JButton searchMotor = new JButton("Buscar órdenes generadas");
+        searchMotor.setBackground(Color.WHITE);
+        searchMotor.setActionCommand(Commands.SEARCH_ORDER.name());
+        searchMotor.addActionListener(control);
 
+        add(addMotor);
+        add(updateMotor);
+        add(searchMotor);
     }
 }
