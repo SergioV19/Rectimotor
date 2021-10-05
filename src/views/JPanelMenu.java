@@ -27,17 +27,14 @@ public class JPanelMenu extends JPanel{
     }
 
     private void init(Controller control) {
-        JButton addMotor = new JButton("registrar orden de ingreso");
-        addMotor.setBackground(Color.WHITE);
+        JButton addMotor = new JButtonMenu("Registrar orden de ingreso", null);
         addMotor.setActionCommand(Commands.ADD_ORDER.name());
         addMotor.addActionListener(control);
-        setBorder(new EmptyBorder(10, 50, 10, 50));
-        JButton updateMotor = new JButton("Actualizar orden");
-        updateMotor.setBackground(Color.WHITE);
+
+        JButton updateMotor = new JButtonMenu("Actualizar orden", null);
         updateMotor.setActionCommand(Commands.UPDATE_ORDER.name());
         updateMotor.addActionListener(control);
-        JButton searchMotor = new JButton("Buscar órdenes generadas");
-        searchMotor.setBackground(Color.WHITE);
+        JButton searchMotor = new JButtonMenu("Buscar órdenes generadas", null);
         searchMotor.setActionCommand(Commands.SEARCH_ORDER.name());
         searchMotor.addActionListener(control);
 

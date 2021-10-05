@@ -4,10 +4,11 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JPanel;
 
 import java.awt.Dimension;
 import java.awt.Color;
-import java.awt.BorderLayout;
+import java.awt.GridLayout;
 
 import controllers.Commands;
 import controllers.Controller;
@@ -24,13 +25,12 @@ public class JFramePrincipal extends JFrame{
     public static final String APP_NAME = "Rectimotor app";
 
     public JFramePrincipal(Controller control){
-        this.setTitle("APP_NAME");
+        getContentPane().setBackground(Color.WHITE);
+        this.setTitle(APP_NAME);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setMinimumSize(new Dimension(M_WIDTH_SIZE, M_HEIGHT_SIZE));
-		setPreferredSize(new Dimension((int) (WIDTH_SIZE*0.6), (int) (HEIGHT_SIZE*0.4)));
+        setResizable(false);
 		setExtendedState(MAXIMIZED_BOTH);
-        BorderLayout borderL = new BorderLayout(30, 50);
-        this.setLayout(borderL);
+        this.setLayout( new GridLayout(3, 1));
         init(control);
         setVisible(true);
     }
@@ -39,7 +39,10 @@ public class JFramePrincipal extends JFrame{
 		this.setBackground(Color.white);
         JPanelMenu pane = new JPanelMenu(control, WIDTH_SIZE, HEIGHT_SIZE);
         pane.setSize(60, 60);
-		this.add(pane, BorderLayout.CENTER);
+        JPanel panel1 = new JPanel();
+        panel1.setBackground(Color.WHITE);
+        this.add(panel1);
+		this.add(pane);
 
 	}
     

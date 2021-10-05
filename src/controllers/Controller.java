@@ -20,15 +20,15 @@ public class Controller implements ActionListener{
             
             switch (Commands.valueOf(e.getActionCommand())) {
                 case ADD_ORDER:
-                    
+
                     break;
                 
                 case UPDATE_ORDER:
-    
+
                     break;
                 
                 case SEARCH_ORDER:
-    
+                    
                     break;
             
                 default:
