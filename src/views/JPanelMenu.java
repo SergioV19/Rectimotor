@@ -19,9 +19,9 @@ import javax.swing.ImageIcon;
 public class JPanelMenu extends JPanel{
     
     private static final long serialVersionUID = 1L;
-    public static final String PATH_IMAGE_ADD_ORDER = "src/images/Image_Add_Order.png";
-    public static final String PATH_IMAGE_SEARCH_ORDER = "src\images\Image_Search_Order.png";
-    public static final String PATH_IMAGE_UPDATE_ORDER = "src\images\Image_Update_Order.png";
+    public static final String PATH_IMAGE_ADD_ORDER = "/images/Image_Add_Order.png";
+    public static final String PATH_IMAGE_SEARCH_ORDER = "/images/Image_Search_Order.png";
+    public static final String PATH_IMAGE_UPDATE_ORDER = "/images/Image_Update_Order.png";
 
     public int WIDTH = 0;
     public int HEIGHT = 0;
@@ -46,10 +46,17 @@ public class JPanelMenu extends JPanel{
         addMotor.setActionCommand(Commands.ADD_ORDER.name());
         addMotor.addActionListener(control);
 
-        JButton updateMotor = new JButtonMenu("Actualizar orden", null);
+        Image updateImage = new ImageIcon(getClass().getResource(PATH_IMAGE_UPDATE_ORDER)).getImage();
+		Icon rescaledUpdate = new ImageIcon(updateImage.getScaledInstance((int) (WIDTH * 0.03),
+					(int) (WIDTH * 0.03), Image.SCALE_SMOOTH));
+        JButton updateMotor = new JButtonMenu("Actualizar orden", rescaledUpdate);
         updateMotor.setActionCommand(Commands.UPDATE_ORDER.name());
         updateMotor.addActionListener(control);
-        JButton searchMotor = new JButtonMenu("Buscar órdenes generadas", null);
+
+        Image searchImage = new ImageIcon(getClass().getResource(PATH_IMAGE_SEARCH_ORDER)).getImage();
+		Icon rescaledSearch = new ImageIcon(searchImage.getScaledInstance((int) (WIDTH * 0.03),
+					(int) (WIDTH * 0.03), Image.SCALE_SMOOTH));
+        JButton searchMotor = new JButtonMenu("Buscar órdenes generadas", rescaledSearch);
         searchMotor.setActionCommand(Commands.SEARCH_ORDER.name());
         searchMotor.addActionListener(control);
 
