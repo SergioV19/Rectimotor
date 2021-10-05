@@ -1,12 +1,7 @@
 package views;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-import javax.swing.Icon;
-import java.awt.BorderLayout;
-import java.awt.Color;
+import javax.swing.*;
+import java.awt.*;
 
 public class JButtonMenu extends JButton{
 
@@ -14,12 +9,13 @@ public class JButtonMenu extends JButton{
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BorderLayout());
         JLabel txt = new JLabel(text);
+        txt.setFont(new Font("gerogia", 0, 25));
         txt.setHorizontalAlignment(SwingConstants.CENTER);
-        buttonPanel.add(txt, BorderLayout.CENTER);
-        buttonPanel.add(new JLabel(rescaled), BorderLayout.SOUTH);
+        buttonPanel.add(txt, BorderLayout.NORTH);
+        buttonPanel.add(new JLabel(rescaled), BorderLayout.CENTER);
         buttonPanel.setBackground(Color.WHITE);
         this.add(buttonPanel);
-        this.setBorder(new RoundedBorder(15));
+        this.setBorder(new RoundedBorder(30));
         this.setBackground(Color.WHITE);
     }
     
