@@ -4,14 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import views.JFramePrincipal;
-import views.ViewManager;
-
 public class Controller implements ActionListener{
 
-    private ViewManager view;
+    private JFramePrincipal view;
 
     public Controller(){
-        new JFramePrincipal(this);
+        view = new JFramePrincipal(this);
     }
 
     @Override
@@ -20,7 +18,7 @@ public class Controller implements ActionListener{
             
             switch (Commands.valueOf(e.getActionCommand())) {
                 case ADD_ORDER:
-
+                    view.loadAddOrderPanel(this);
                     break;
                 
                 case UPDATE_ORDER:

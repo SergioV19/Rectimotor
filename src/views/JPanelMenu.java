@@ -1,20 +1,12 @@
 package views;
 
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.DimensionUIResource;
 
 import controllers.Controller;
 import controllers.Commands;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import java.awt.Color;
-import java.awt.GridLayout;
-import java.awt.Dimension;
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import java.awt.*;
+import javax.swing.*;
 
 public class JPanelMenu extends JPanel{
     
