@@ -1,6 +1,7 @@
 package views;
 
 import java.awt.Toolkit;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -51,6 +52,39 @@ public class JFramePrincipal extends JFrame{
         principalPanel.removeAll();
         principalPanel.setLayout(new BorderLayout());
         principalPanel.add(pane, BorderLayout.CENTER);
+        principalPanel.repaint();
+        principalPanel.revalidate();
+    }
+
+    public void loadSelectOrderPanel(Controller control){
+        ArrayList<Object[]> objList = new ArrayList<Object[]>();
+        objList.add(new Object[]{2,2});
+        objList.add(new Object[]{1,2});
+        objList.add(new Object[]{2,2});
+        objList.add(new Object[]{1,2});
+        objList.add(new Object[]{2,2});
+        objList.add(new Object[]{1,2});
+        objList.add(new Object[]{2,2});
+        objList.add(new Object[]{1,2});
+        objList.add(new Object[]{2,2});
+        objList.add(new Object[]{1,2});
+        objList.add(new Object[]{2,2});
+        objList.add(new Object[]{1,2});
+        objList.add(new Object[]{2,2});
+        objList.add(new Object[]{1,2});
+        objList.add(new Object[]{2,2});
+        objList.add(new Object[]{1,2});
+        objList.add(new Object[]{2,2});
+        objList.add(new Object[]{1,2});
+        objList.add(new Object[]{2,2});
+        objList.add(new Object[]{1,2});
+        objList.add(new Object[]{2,2});
+        objList.add(new Object[]{1,2});
+        JPanel selectOrder = new JPanelListOrder("holi", "1212", objList);
+
+        principalPanel.removeAll();
+        principalPanel.setLayout(new BorderLayout());
+        principalPanel.add(selectOrder, BorderLayout.CENTER);
         principalPanel.repaint();
         principalPanel.revalidate();
     }

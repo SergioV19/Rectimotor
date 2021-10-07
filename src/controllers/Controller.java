@@ -26,7 +26,7 @@ public class Controller implements ActionListener{
                     break;
                 
                 case SEARCH_ORDER:
-                    
+                    view.loadSelectOrderPanel(this);
                     break;
             
                 default:

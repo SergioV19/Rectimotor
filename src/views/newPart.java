@@ -9,12 +9,17 @@ public class newPart extends JPanel{
      public JTextField textF;
 
     public newPart(String name){
-        this.setLayout(new BorderLayout());
+        this.setBackground(Color.WHITE);
+        GridLayout grid = new GridLayout(1, 3, 15, 10);
+        this.setLayout(grid);
         cBox = new JCheckBox(name);
+        cBox.setBackground(Color.WHITE);
         localSpinner = new JSpinner();
         textF = new JTextField();
-        this.add(cBox, BorderLayout.WEST);
-        // this.add(localSpinner, BorderLayout.CENTER);
-        this.add(textF, BorderLayout.WEST);
+        this.add(cBox);
+        this.add(localSpinner);
+        this.add(textF);
+
+        setVisible(true);
     }
 }
