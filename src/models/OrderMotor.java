@@ -3,7 +3,7 @@ package models;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Order{
+public class OrderMotor{
     
 	private int id;
 	private String workshop;
@@ -15,7 +15,7 @@ public class Order{
     private ArrayList<Jobs> jobsList;
     
 	
-	public Order(String workshop, String ownerName, String ownerPhone, String arriveDate,
+	public OrderMotor(String workshop, String ownerName, String ownerPhone, String arriveDate,
 			ArrayList<String> engineParts, ArrayList<Jobs> jobsList) {
 		this.workshop = workshop;
 		this.ownerName = ownerName;
@@ -27,7 +27,7 @@ public class Order{
 		id= 0;
 	}
 
-    public Order(){
+    public OrderMotor(){
 
     }
 
@@ -69,16 +69,6 @@ public class Order{
 
 	public ArrayList<String> getEngineParts() {
 		return engineParts;
-	}
-
-	public boolean isInEngineParts(String part){
-		boolean isInList = false;
-		for (String string : engineParts) {
-			if(string.equals(part)){
-				isInList = true;
-			}
-		}
-		return isInList;
 	}
 
 	public void setEngineParts(ArrayList<String> engineParts) {

@@ -26,8 +26,13 @@ public class Controller implements ActionListener{
                     break;
                 
                 case SEARCH_ORDER:
-                    view.loadSelectOrderPanel(this);
-                    break;
+                view.loadSelectOrderPanel(this);
+                break;
+                
+                case CLOSE:
+                    System.exit(0);
+                    System.out.println("sale");
+                break;
             
                 default:
                     break;

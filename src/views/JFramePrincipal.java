@@ -4,10 +4,11 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 import java.awt.*;
 
-import controllers.Controller;
+import controllers.*;
 
 public class JFramePrincipal extends JFrame{
 
@@ -29,6 +30,7 @@ public class JFramePrincipal extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
 		setExtendedState(MAXIMIZED_BOTH);
+        this.setUndecorated(true);
         // this.setLayout( new GridLayout(3, 1));
         this.setLayout( new BorderLayout());
         init(control);
@@ -37,12 +39,20 @@ public class JFramePrincipal extends JFrame{
     }
 
     private void init(Controller control) {
+        JPanel miniPanel = new JPanel(new BorderLayout());
+        miniPanel.setBorder(new EmptyBorder(0,0, (int)HEIGHT_SIZE/4, 0));
+        JButton closeButton = new JButton("cerrar");
+        closeButton.setBorder(new RoundedBorder(15));
+        closeButton.setBackground(Color.WHITE);
+        closeButton.setActionCommand(Commands.CLOSE.name());
+        
+        miniPanel.add(closeButton, BorderLayout.EAST);
+        miniPanel.setBackground(Color.WHITE);
+        miniPanel.setSize(new Dimension(1,1));
         principalPanel.setLayout(new GridLayout(3,1));
 		this.setBackground(Color.white);
         JPanelMenu pane = new JPanelMenu(control, WIDTH_SIZE, HEIGHT_SIZE);
-        JPanel panel1 = new JPanel();
-        panel1.setBackground(Color.WHITE);
-        principalPanel.add(panel1, BorderLayout.NORTH);
+        principalPanel.add(miniPanel, BorderLayout.NORTH);
 		principalPanel.add(pane, BorderLayout.CENTER);
 
 	}
