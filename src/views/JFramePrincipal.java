@@ -60,26 +60,6 @@ public class JFramePrincipal extends JFrame{
         ArrayList<Object[]> objList = new ArrayList<Object[]>();
         objList.add(new Object[]{2,2});
         objList.add(new Object[]{1,2});
-        objList.add(new Object[]{2,2});
-        objList.add(new Object[]{1,2});
-        objList.add(new Object[]{2,2});
-        objList.add(new Object[]{1,2});
-        objList.add(new Object[]{2,2});
-        objList.add(new Object[]{1,2});
-        objList.add(new Object[]{2,2});
-        objList.add(new Object[]{1,2});
-        objList.add(new Object[]{2,2});
-        objList.add(new Object[]{1,2});
-        objList.add(new Object[]{2,2});
-        objList.add(new Object[]{1,2});
-        objList.add(new Object[]{2,2});
-        objList.add(new Object[]{1,2});
-        objList.add(new Object[]{2,2});
-        objList.add(new Object[]{1,2});
-        objList.add(new Object[]{2,2});
-        objList.add(new Object[]{1,2});
-        objList.add(new Object[]{2,2});
-        objList.add(new Object[]{1,2});
         JPanel selectOrder = new JPanelListOrder("holi", "1212", objList);
 
         principalPanel.removeAll();

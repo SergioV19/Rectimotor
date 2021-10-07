@@ -63,7 +63,7 @@ public class JPanelListOrder extends JPanel{
         gbc.gridwidth = 3;
         gbc.gridheight = 8;
         gbc.weightx = 1.0;
-        gbc.weighty = 8.0;
+        gbc.weighty = 9.0;
         gbc.fill = gbc.BOTH;
         this.add(scrull, gbc);
 

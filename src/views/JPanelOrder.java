@@ -5,6 +5,7 @@ import java.awt.*;
 import java.time.LocalDate;
 
 import controllers.Controller;
+import models.Order;
 
 public class JPanelOrder extends JPanel{
 
@@ -36,7 +37,27 @@ public class JPanelOrder extends JPanel{
 		setVisible(true);
     }
 
+    public JPanelOrder(Controller control, Order order){
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+		WIDTH = (int) dimension.getWidth();
+		HEIGHT = (int) dimension.getHeight();
+		setLayout(new BorderLayout());
+		setBackground(Color.WHITE);
+        
+		north = createNorth(control);
+		add(north, BorderLayout.NORTH);
+        
+        center = createCenter(control);
+        add(center, BorderLayout.CENTER);
+        
+        footer = createSouth(control);
+        add(footer, BorderLayout.SOUTH);
+        
+		setVisible(true);
+    }
+
     public JPanel createNorth(Controller controller){
+
         JPanel northPane = new JPanel();
         GridBagLayout gbl = new GridBagLayout();
         northPane.setLayout(gbl);
@@ -161,6 +182,14 @@ public class JPanelOrder extends JPanel{
     }
   
     public JPanel createCenter(Controller controller){
+
+        JLabel received = new JLabel("Partes recibidas", JLabel.CENTER);
+        received.setBackground(Color.WHITE);
+        JLabel cuantity = new JLabel("Cantidad", JLabel.CENTER);
+        cuantity.setBackground(Color.WHITE);
+        JLabel sizes = new JLabel("Medidas", JLabel.CENTER);     
+        sizes.setBackground(Color.WHITE);
+
         JPanel centerPane = new JPanel(new GridBagLayout());
         GridBagLayout gbl = new GridBagLayout();
         centerPane.setLayout(gbl);
@@ -178,6 +207,34 @@ public class JPanelOrder extends JPanel{
         newPart ejePart = new newPart("Eje de Levas");
         newPart carterPart = new newPart("Carter");
         newPart taponPart = new newPart("Tapon Resortes");
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = gbc.BOTH;
+        centerPane.add(received, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = gbc.BOTH;
+        centerPane.add(cuantity, gbc);
+
+        gbc.gridx = 2;
+        gbc.gridy = 0;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = gbc.BOTH;
+        centerPane.add(sizes, gbc);
+
 
         gbc.gridx = 0;
         gbc.gridy = 1;

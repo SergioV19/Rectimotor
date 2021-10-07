@@ -21,6 +21,7 @@ public class JPanelButtonList extends JPanel{
         this.add(orderNum);
         this.add(orderDate);
         this.add(selection);
+        this.setPreferredSize(new Dimension(80, 20));
     }
     
 }
