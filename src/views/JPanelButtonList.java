@@ -11,7 +11,7 @@ public class JPanelButtonList extends JPanel{
 
     public JPanelButtonList(Object[] order){
         this.setBackground(Color.WHITE);
-        this.setLayout(new GridLayout(1, 3, 10, 10));
+        this.setLayou(new GridLayout(1, 3, 10, 10));
         JLabel orderNum = new JLabel("numero de orden: "+order[0], JLabel.CENTER);
         JLabel orderDate = new JLabel("fecha de ingreso: "+order[1], JLabel.CENTER);
         JButton selection = new JButton("Seleccionar");
