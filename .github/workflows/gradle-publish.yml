@@ -53,3 +53,6 @@ jobs:
       uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
     - name: Run the Gradle package task
       run: ./src/runner -b Run.java main
+    - name: Gradle Wrapper Validation
+      uses: gradle/wrapper-validation-action@v1.0.4
+
