@@ -29,3 +29,7 @@ jobs:
         with:
           name: myPackage
           path: myTarget
+      - uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ secrets.CACHE_VERSION }}
