@@ -24,7 +24,7 @@ public class JFramePrincipal extends JFrame{
 
     public JFramePrincipal(Controller control){
         this.principalPanel = new JPanel (new BorderLayout());
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(Color.BLACK);
         principalPanel.setBackground(Color.WHITE);
         this.setTitle(APP_NAME);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
