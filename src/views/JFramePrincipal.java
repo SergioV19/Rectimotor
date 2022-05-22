@@ -14,7 +14,7 @@ public class JFramePrincipal extends JFrame{
 
     private static final long serialVersionUID = 1L;
 
-    public static Dimensio dimension = Toolkit.getDefaultToolkit().getScreenSize();
+    public static Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
     public static final int WIDTH_SIZE = (int) (dimension.getWidth());
     public static final int HEIGHT_SIZE = (int) (dimension.getHeight());
 	public static final int M_WIDTH_SIZE = (int) (dimension.getWidth()*0.7);
